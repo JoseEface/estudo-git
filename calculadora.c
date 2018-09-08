@@ -4,6 +4,8 @@
 
 /**Operações da calculadora**/
 
+/* Comentario */
+
 float soma(const float *a, const float *b)
 {
   return *a+*b;
