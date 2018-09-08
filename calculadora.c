@@ -26,22 +26,28 @@ float divisao(const float *a, const float *b)
   return (*a)/(*b);
 }
 
+void ajuda()
+{
+   printf("Lista de operações disponíveis: \n\n");
+   printf("+ - realiza a soma de dois números\n");
+   printf("- - realiza a subtração de dois números\n");
+   printf("* - realiza a multiplicação de dois números\n");
+   printf("/ - realiza a divisão de dois número\n");
+   printf("h - mostra essa informação de ajuda\n");
+   printf("s - sai do programa\n\n");   
+}
+
 int main(void)
 {
    int continuar=1;
    char operacao;
    float numeroA,numeroB;
    float (*fxoperacao)(const float *, const float *);
-
+	
+   ajuda();
    while(continuar)
-   {   
-	printf("Lista de operações disponíveis: \n\n");
-	printf("+ - realiza a soma de dois números\n");
-	printf("- - realiza a subtração de dois números\n");
-	printf("* - realiza a multiplicação de dois números\n");
-	printf("/ - realiza a divisão de dois número\n");
-	printf("s - sai do programa\n\n");
-        printf("Digite a operação desejada: ");
+   {   	
+	printf("Digite a operação desejada: ");
         scanf("%c",&operacao);
 
         if(operacao != 's')
@@ -60,6 +66,10 @@ int main(void)
 	      case '/':
 		 fxoperacao=divisao;
                  break;
+	      case 'h':
+		 ajuda();
+		 setbuf(stdin, NULL);
+		 continue;
               default:
 		 printf("Operacao invalida\n\n");
 		 setbuf(stdin,NULL);
