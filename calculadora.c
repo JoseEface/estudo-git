@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+/**Operações da calculadora**/
 
 float soma(const float *a, const float *b)
 {
@@ -26,27 +30,35 @@ float divisao(const float *a, const float *b)
   return (*a)/(*b);
 }
 
+void ajuda(void)
+{
+   printf("Lista de operações disponíveis: \n\n");
+   printf("+ - realiza a soma de dois números\n");
+   printf("- - realiza a subtração de dois números\n");
+   printf("* - realiza a multiplicação de dois números\n");
+   printf("/ - realiza a divisão de dois número\n");
+   printf("h - mostra esse menu de ajuda\n");
+   printf("s - sai do programa\n\n");   
+}
+
+/**Função principal**/
+
 int main(void)
 {
    int continuar=1;
-   char operacao;
+   char operacao[20];
    float numeroA,numeroB;
    float (*fxoperacao)(const float *, const float *);
 
+   ajuda();
    while(continuar)
    {   
-	printf("Lista de operações disponíveis: \n\n");
-	printf("+ - realiza a soma de dois números\n");
-	printf("- - realiza a subtração de dois números\n");
-	printf("* - realiza a multiplicação de dois números\n");
-	printf("/ - realiza a divisão de dois número\n");
-	printf("s - sai do programa\n\n");
         printf("Digite a operação desejada: ");
-        scanf("%c",&operacao);
+        fgets(operacao,3,stdin);
 
-        if(operacao != 's')
+        if(operacao[0] != 's')
         {
-	   switch(operacao)
+	   switch(operacao[0])
            {
               case '+':
 		 fxoperacao=soma;
@@ -60,20 +72,22 @@ int main(void)
 	      case '/':
 		 fxoperacao=divisao;
                  break;
+	      case 'h':
+		 ajuda(); 
+		 continue;
               default:
-		 printf("Operacao invalida\n\n");
-		 setbuf(stdin,NULL);
+		 printf("Operação inválida\n");
                  continue;
            }
+	   
 
 	   printf("Digite o primerio numero: ");
-           scanf("%f",&numeroA);
+           fgets(operacao,19,stdin); numeroA=atof(operacao);
            printf("Digite o segundo número: ");
-           scanf("%f",&numeroB);
+           fgets(operacao,19,stdin); numeroB=atof(operacao);
 
 	   printf("Resultado: %f",fxoperacao(&numeroA,&numeroB));
 	   printf("\n\n"); 
-	   setbuf(stdin,NULL); /*Evitando salto de alguns scanfs....*/
         }
         else
            continuar=0;                
