@@ -35,6 +35,12 @@ int main(void)
 
    while(continuar)
    {   
+	printf("Lista de operações disponíveis: \n\n");
+	printf("+ - realiza a soma de dois números\n");
+	printf("- - realiza a subtração de dois números\n");
+	printf("* - realiza a multiplicação de dois números\n");
+	printf("/ - realiza a divisão de dois número\n");
+	printf("s - sai do programa\n\n");
         printf("Digite a operação desejada: ");
         scanf("%c",&operacao);
 
