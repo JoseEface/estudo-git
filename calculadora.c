@@ -6,6 +6,8 @@
 
 /* Comentario */
 
+/*Comentario inutil*/
+
 float soma(const float *a, const float *b)
 {
   return *a+*b;
