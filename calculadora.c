@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*Comentario*/
+/* Comentario */
 
 float soma(const float *a, const float *b)
 {
