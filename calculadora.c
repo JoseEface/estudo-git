@@ -54,7 +54,7 @@ int main(void)
    while(continuar)
    {   
         printf("Digite a operação desejada: ");
-        fgets(operacao,3,stdin);
+        fgets(operacao,3,stdin);  //Verificar possíveis problemas com buffer
 
         if(operacao[0] != 's')
         {
