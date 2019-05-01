@@ -4,8 +4,6 @@
 
 #include "FuncoesCalculadora.h"
 
-/**Função principal**/
-
 int main(void)
 {
    int continuar=1;
@@ -21,7 +19,7 @@ int main(void)
 
         if(operacao[0] != 's')
         {
-	   switch(operacao[0])
+	   switch(operacao[0])   //Verificar uma forma eficiente de separar isso em uma função
            {
               case '+':
 		 fxoperacao=soma;
