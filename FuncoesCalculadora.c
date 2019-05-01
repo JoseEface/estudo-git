@@ -28,6 +28,8 @@ float divisao(const float *a, const float *b)
 
 void ajuda(void)
 {
+   prinft("Calculadora Simples\n");
+   printf("--------------------\n");
    printf("Lista de operações disponíveis: \n\n");
    printf("+ - realiza a soma de dois números\n");
    printf("- -  realiza a subtração de dois números\n");
@@ -36,7 +38,4 @@ void ajuda(void)
    printf("h - mostra esse menu de ajuda\n");
    printf("s - sai do programa \n\n");
 }
-
-
-
 
