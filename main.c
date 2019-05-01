@@ -21,7 +21,7 @@ int main(void)
         {
 	   switch(operacao[0])   //Verificar uma forma eficiente de separar isso em uma função
            {
-              case '+':
+              case '+':    //A nova funcao poderia retornar ponteiros para funcao ?
 		 fxoperacao=soma;
                  break;
               case '-':
@@ -34,7 +34,7 @@ int main(void)
 		 fxoperacao=divisao;
                  break;
 	      case 'h':
-		 ajuda(); 
+		 ajuda();  //Se ponteiro para funcao como  retornar essa ?
 		 continue;
               default:
 		 printf("Operação inválida\n");
