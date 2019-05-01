@@ -36,6 +36,7 @@ void ajuda(void)
    printf("* - realiza a multiplicação de dois números\n");
    printf("/ - realiza a divisão de dois números\n");
    printf("h - mostra esse menu de ajuda\n");
-   printf("s - sai do programa \n\n");
+   printf("s - sai do programa \n");
+   printf("---------------------\n\n");
 }
 
